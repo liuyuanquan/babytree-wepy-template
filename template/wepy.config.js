@@ -1,22 +1,22 @@
-const path = require('path');
-var prod = process.env.NODE_ENV === 'production';
+const path = require('path')
+var prod = /production$/.test(process.env.NODE_ENV)
+const LessPluginAutoPrefix = require('less-plugin-autoprefix')
 
 module.exports = {
   wpyExt: '.wpy',
-  eslint: {{lint}},
+  eslint: true,
   cliLogs: !prod,
   build: {
-    {{#web}}
-    web: {
-      htmlTemplate: path.join('src', 'index.template.html'),
-      htmlOutput: path.join('web', 'index.html'),
-      jsOutput: path.join('web', 'index.js')
-    }
-    {{/web}}
   },
   resolve: {
     alias: {
-      counter: path.join(__dirname, 'src/components/counter'),
+      mock: path.join(__dirname, 'src/mock'),
+      images: path.join(__dirname, 'src/images'),
+      components: path.join(__dirname, 'src/components'),
+      service: path.join(__dirname, 'src/services'),
+      util: path.join(__dirname, 'src/utils'),
+      config: path.join(__dirname, 'src/config/index.js'),
+      stat: path.join(__dirname, 'src/stat'),
       '@': path.join(__dirname, 'src')
     },
     aliasFields: ['wepy', 'weapp'],
@@ -24,11 +24,12 @@ module.exports = {
   },
   compilers: {
     less: {
-      compress: prod
+      compress: prod,
+      plugins: [new LessPluginAutoPrefix({browsers: ['Android >= 2.3', 'Chrome > 20', 'iOS >= 6']})]
     },
-    /*sass: {
+    /* sass: {
       outputStyle: 'compressed'
-    },*/
+    }, */
     babel: {
       sourceMap: true,
       presets: [
@@ -38,7 +39,7 @@ module.exports = {
         'transform-class-properties',
         'transform-decorators-legacy',
         'transform-object-rest-spread',
-        'transform-export-extensions',
+        'transform-export-extensions'
       ]
     }
   },
@@ -50,7 +51,6 @@ module.exports = {
 }
 
 if (prod) {
-
   // 压缩sass
   // module.exports.compilers['sass'] = {outputStyle: 'compressed'}
 
@@ -59,6 +59,11 @@ if (prod) {
     uglifyjs: {
       filter: /\.js$/,
       config: {
+        compress: {
+          dead_code: true,
+          drop_console: true,
+          drop_debugger: true
+        }
       }
     },
     imagemin: {

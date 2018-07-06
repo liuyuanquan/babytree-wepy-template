@@ -1,34 +1,94 @@
-<style lang='less'></style>
-
 <script>
-  import wepy from 'wepy'
-  import 'wepy-async-function'
+{{#ald}}
+import './utils/ald-stat.js'
+{{/ald}}
+import wepy from 'wepy'
+import 'wepy-async-function'
+import { handleUserLogin } from 'util/login'
+import statInit from '@bbt/wx-stat'
+import statConf from 'util/stat/config'
 
-  export default class extends wepy.app {
-    config = {
-      pages: [
-        'pages/index'
+// 获取用户 token 初始化埋点 SDK
+statInit({
+  ...statConf,
+  token: handleUserLogin
+})
+
+export default class extends wepy.app {
+  config = {
+    pages: [
+      'pages/home/index'
+    ],
+    window: {
+      backgroundTextStyle: 'dark',
+      navigationBarBackgroundColor: '#ffffff',
+      navigationBarTitleText: 'WeChat',
+      navigationBarTextStyle: 'black',
+      enablePullDownRefresh: true,
+      onReachBottomDistance: 50,
+      backgroundColorBottom: '#f6f6f6'
+    },
+    tabBar: {
+      list: [
+        {
+          pagePath: 'pages/home/index',
+          text: '首页',
+          iconPath: 'images/home-unactive.png',
+          selectedIconPath: 'images/home-active.png'
+        }
       ],
-      window: {
-        backgroundTextStyle: 'light',
-        navigationBarBackgroundColor: '#fff',
-        navigationBarTitleText: 'WeChat',
-        navigationBarTextStyle: 'black'
-      }
-    }
-
-    globalData = {
-      
-    }
-
-    constructor () {
-      super()
-      this.use('requestfix')
-      this.use('promisify')
-    }
-
-    onLaunch() {
-      
+      selectedColor: '#000000',
+      borderStyle: 'white',
+      backgroundColor: '#fff',
+      color: '#BCBCBC'
     }
   }
+
+  globalData = {
+    userInfo: null
+  }
+
+  constructor() {
+    super()
+    this.use('requestfix')
+    this.use('promisify')
+  }
+
+  updateVersion() {
+     // 自动更新版本
+    try {
+      const res = wepy.getSystemInfoSync()
+      if (res.SDKVersion > '1.9.90') {
+        // eslint-disable-line no-undef
+        const updateManager = wx.getUpdateManager()
+        updateManager.onCheckForUpdate(function (res) {
+          // 请求完新版本信息的回调
+          if (res.hasUpdate) {
+            console.log('res.hasUpdate', res.hasUpdate)
+            // 是否跟新
+          }
+        })
+        updateManager.onUpdateReady(function () {
+          wepy.showModal({
+            title: '更新提示',
+            content: '新版本已经准备好，是否重启应用？',
+            success: function (res) {
+              if (res.confirm) {
+                // 新的版本已经下载好，调用 applyUpdate 应用新版本并重启
+                updateManager.applyUpdate()
+              }
+            }
+          })
+        })
+      } else {}
+    } catch (e) {
+      // Do something when catch error
+    }
+  }
+
+  onLaunch() {
+    handleUserLogin()
+    this.updateVersion()
+  }
+}
 </script>

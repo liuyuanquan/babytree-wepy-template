@@ -1,0 +1,19 @@
+appId: '{{appId}}'
+appName: '{{name}}'
+version: '1.2.0'
+development:
+  host: 'http://open.20.babytree-test.com'
+  loginHost: 'http://wechatapi.babytree-test.com'
+  env: 'dev'
+test:
+  host: 'http://open.20.babytree-test.com'
+  loginHost: 'http://wechatapi.babytree-test.com'
+  env: 'test'
+preproduction:
+  host: 'http://open.pre.fpm.babytree.com'
+  loginHost: 'http://prewechat.api.babytree-test.com'
+  env: 'pre'
+production:
+  host: 'https://open.babytree.com'
+  loginHost: 'https://wechatapi.babytree.com'
+  env: 'prod'
