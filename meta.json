@@ -1,0 +1,27 @@
+{
+  "prompts": {
+    "name": {
+      "type": "string",
+      "message": "项目名称"
+    },
+    "appid": {
+      "type": "string",
+      "required": true,
+      "message": "AppId"
+    },
+    "description": {
+      "type": "string",
+      "required": false,
+      "message": "项目介绍",
+      "default": "A WePY project"
+    },
+    "author": {
+      "type": "string",
+      "message": "作者"
+    }
+  },
+  "filters": {
+    ".eslintignore": "lint",
+    ".eslintrc.js": "lint"
+  }
+}
