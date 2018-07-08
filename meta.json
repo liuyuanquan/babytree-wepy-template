@@ -21,10 +21,17 @@
       "type": "confirm",
       "message": "使用ESLint?",
       "default": false
+    },
+    "ald": {
+      "type": "confirm",
+      "message": "使用阿拉丁统计?",
+      "default": true
     }
   },
   "filters": {
     ".eslintignore": "lint",
-    ".eslintrc.js": "lint"
+    ".eslintrc.js": "lint",
+    "src/utils/ald-stat.js": "ald",
+    "src/utils/ald-stat-conf.js": "ald"
   }
 }
