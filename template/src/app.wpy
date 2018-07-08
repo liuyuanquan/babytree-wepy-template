@@ -18,7 +18,8 @@ statInit({
 export default class extends wepy.app {
   config = {
     pages: [
-      'pages/home/index'
+      'pages/home/index',
+      'pages/user/index'
     ],
     window: {
       backgroundTextStyle: 'dark',
