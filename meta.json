@@ -37,10 +37,12 @@
       "message": "自动安装依赖?",
       "choices": [{
         "name": "自动运行npm install",
-        "value": "npm"
+        "value": "npm",
+        "short": "npm"
       }, {
         "name": "我自己运行npm install",
-        "value": false
+        "value": false,
+        "short": false
       }],
       "default": "npm"
     }
