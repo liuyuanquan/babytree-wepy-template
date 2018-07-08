@@ -15,7 +15,9 @@
   "author": "{{author}}",
   "license": "MIT",
   "dependencies": {
+    {{#stat}}
     "@bbt/wx-stat": "^2.2.0",
+    {{/stat}}
     "fsevents": "^1.2.3",
     "md5": "^2.2.1",
     "wepy": "^1.6.0",
