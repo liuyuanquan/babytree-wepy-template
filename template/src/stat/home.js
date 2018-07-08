@@ -1,10 +1,4 @@
-/**
- * @fileOverview 首页相关埋点
- * @author houquan | houquan@babytree-inc.com
- * @author jialong | jialong@babytree-inc.com
- * @version 1.0.0 | 2018-06-08 | houquan       // 初始版本
- */
-import { send } from 'util/utils'
+import { send, flush } from 'util/utils'
 
 // tab 埋点 pi 映射
 const tabPIMap = {
