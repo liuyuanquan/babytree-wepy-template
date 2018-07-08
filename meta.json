@@ -4,7 +4,7 @@
       "type": "string",
       "message": "项目名称"
     },
-    "appid": {
+    "appId": {
       "type": "string",
       "required": true,
       "message": "AppId"
