@@ -36,7 +36,7 @@
       "type": "list",
       "message": "自动安装依赖?",
       "choices": [
-        "使用npm install",
+        "自动运行npm install",
         "我自己运行npm install"
       ],
       "default": 0
