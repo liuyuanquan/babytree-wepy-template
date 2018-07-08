@@ -22,9 +22,14 @@
       "message": "使用ESLint?",
       "default": false
     },
+    "stat": {
+      "type": "confirm",
+      "message": "添加公司埋点?",
+      "default": true
+    },
     "ald": {
       "type": "confirm",
-      "message": "使用阿拉丁统计?",
+      "message": "添加阿拉丁统计?",
       "default": true
     }
   },
