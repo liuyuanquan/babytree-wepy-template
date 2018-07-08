@@ -37,7 +37,6 @@
     ".eslintignore": "lint",
     ".eslintrc.js": "lint",
     "src/utils/ald-stat.js": "ald",
-    "src/utils/ald-stat-conf.js": "ald",
-    "src/utils/stat/config.js": "stat"
+    "src/utils/ald-stat-conf.js": "ald"
   }
 }
