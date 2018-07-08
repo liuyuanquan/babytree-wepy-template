@@ -32,9 +32,7 @@ export default class extends wepy.app {
       list: [
         {
           pagePath: 'pages/home/index',
-          text: '首页',
-          iconPath: 'images/home-unactive.png',
-          selectedIconPath: 'images/home-active.png'
+          text: '首页'
         }
       ],
       selectedColor: '#000000',
@@ -87,7 +85,7 @@ export default class extends wepy.app {
   }
 
   onLaunch() {
-    handleUserLogin()
+    // handleUserLogin()
     this.updateVersion()
   }
 }
