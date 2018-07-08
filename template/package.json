@@ -10,7 +10,7 @@
     "build:test": "cross-env NODE_ENV=test npm run watch:config & wepy build --watch",
     "build:pre": "cross-env NODE_ENV=preproduction npm run build:env && cross-env NODE_ENV=preproduction wepy build --watch",
     "build:prod": "cross-env NODE_ENV=production npm run build:env && cross-env NODE_ENV=production wepy build --no-cache",
-    "clean": "find ./dist -maxdepth 1 -not -name 'project.config.json' -not -name 'dist' | xargs rm -rf",
+    "clean": "find ./dist -maxdepth 1 -not -name 'project.config.json' -not -name 'dist' | xargs rm -rf"
   },
   "author": "{{author}}",
   "license": "MIT",
