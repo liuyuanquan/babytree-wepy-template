@@ -1,6 +1,6 @@
 appId: '{{appId}}'
 appName: '{{name}}'
-version: '1.2.0'
+version: '1.0.0'
 development:
   host: 'http://open.20.babytree-test.com'
   loginHost: 'http://wechatapi.babytree-test.com'
