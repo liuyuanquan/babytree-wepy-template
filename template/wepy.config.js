@@ -4,7 +4,7 @@ const LessPluginAutoPrefix = require('less-plugin-autoprefix')
 
 module.exports = {
   wpyExt: '.wpy',
-  eslint: true,
+  eslint: {{lint}},
   cliLogs: !prod,
   build: {
   },
