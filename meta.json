@@ -6,18 +6,21 @@
     },
     "appId": {
       "type": "string",
-      "required": true,
-      "message": "AppId"
+      "message": "appId"
     },
     "description": {
       "type": "string",
-      "required": false,
       "message": "项目介绍",
-      "default": "A WePY project"
+      "default": "A BabyTree project"
     },
     "author": {
       "type": "string",
       "message": "作者"
+    },
+    "lint": {
+      "type": "confirm",
+      "message": "使用ESLint?",
+      "default": false
     }
   },
   "filters": {
