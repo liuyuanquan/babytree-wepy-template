@@ -36,11 +36,11 @@
       "type": "list",
       "message": "自动安装依赖?",
       "choices": [{
-        name: "自动运行npm install",
-        value: "npm"
+        "name": "自动运行npm install",
+        "value": "npm"
       }, {
-        name: "我自己运行npm install",
-        value: false
+        "name": "我自己运行npm install",
+        "value": false
       }],
       "default": 'npm'
     }
