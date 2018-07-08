@@ -42,7 +42,7 @@
         "name": "我自己运行npm install",
         "value": false
       }],
-      "default": 'npm'
+      "default": "npm"
     }
   },
   "filters": {
