@@ -5,14 +5,15 @@ import './utils/ald-stat.js'
 import wepy from 'wepy'
 import 'wepy-async-function'
 import { handleUserLogin } from 'util/login'
+{{#stat}}
 import statInit from '@bbt/wx-stat'
 import statConf from 'util/stat/config'
-
 // 获取用户 token 初始化埋点 SDK
 statInit({
   ...statConf,
   token: handleUserLogin
 })
+{{/stat}}
 
 export default class extends wepy.app {
   config = {
