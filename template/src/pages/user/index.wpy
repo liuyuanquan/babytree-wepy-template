@@ -1,0 +1,37 @@
+<style lang='less' src='index.less'></style>
+
+<template lang='wxml' src='index.wxml'></template>
+
+<script>
+  import wepy from 'wepy'
+
+  export default class Index extends wepy.page {
+    config = {
+      navigationBarTitleText: 'test'
+    }
+
+    components = {
+      
+    }
+
+    data = {
+      
+    }
+
+    computed = {
+      
+    }
+
+    methods = {
+      
+    }
+
+    events = {
+      
+    }
+
+    onLoad() {
+      
+    }
+  }
+</script>
