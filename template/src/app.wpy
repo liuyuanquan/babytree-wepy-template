@@ -86,7 +86,7 @@ export default class extends wepy.app {
 
   onLaunch() {
     // handleUserLogin()
-    this.updateVersion()
+    // this.updateVersion()
   }
 }
 </script>
