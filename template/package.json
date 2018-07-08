@@ -1,13 +1,13 @@
 {
   "name": "{{name}}",
-  "version": "0.0.2",
+  "version": "1.0.0",
   "description": "{{description}}",
   "main": "dist/app.js",
   "scripts": {
     "watch:config": "nodemon -w config/app.yaml --exec 'babel-node' ./scripts/build.js",
     "start": "npm run clean && cross-env NODE_ENV=development npm run watch:config & wepy build --watch",
     "build:env": "babel-node ./scripts/build.js",
-    "build:test": "npm run clean && cross-env NODE_ENV=test npm run watch:config & wepy build --watch",
+    "build:test": "cross-env NODE_ENV=test npm run watch:config & wepy build --watch",
     "build:pre": "cross-env NODE_ENV=preproduction npm run build:env && cross-env NODE_ENV=preproduction wepy build --watch",
     "build:prod": "cross-env NODE_ENV=production npm run build:env && cross-env NODE_ENV=production wepy build --no-cache",
     "clean": "find ./dist -maxdepth 1 -not -name 'project.config.json' -not -name 'dist' | xargs rm -rf",
